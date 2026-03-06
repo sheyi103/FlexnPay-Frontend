@@ -3,6 +3,7 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   const body = await request.json();
   const apiUrl = process.env.API_URL;
+  console.log("[fx/quote] API_URL =", apiUrl);
 
   if (!apiUrl) {
     return NextResponse.json({ error: "API_URL is not configured" }, { status: 500 });
